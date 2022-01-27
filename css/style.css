@@ -5,22 +5,21 @@
 :root{
  --red:rgb(220,20,60);
  --black:rgb(0,0,0);
-
+ --grey:rgb(51,51,51,0.3);
 --p: font-family: 'Merriweather' black;
-
-
 }
+
 .header-bgimg{
     background: url(/images/DSC_8990.jpg);
     background-size: cover;
     position: relative;
-    height: 90vh;
+    height: 60vh; 
 }
+
 .navbar{
-    background-color: rgb(51,51,51,0.3);
+    background-color: var(--grey);
     font-size: large;
-    font-family: 'Poppins',sans-serif;
-    
+    font-family: 'Poppins',sans-serif;    
 }
 
 
@@ -49,4 +48,13 @@
 }
 footer p{
     font-family: var(--p);
+}
+
+/*For screens bigger than 768px*/
+@media screen and (min-width: 768px)
+{
+    .header-bgimg{
+        height: 90vh;
+    }
+    
 }
