@@ -1,1 +1,1 @@
-This is our portfolia school project
+This is our portfolio school project
