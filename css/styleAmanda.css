@@ -1,4 +1,7 @@
-
+.about-me{
+  display: grid;
+  gap: 1.5rem;
+}
 .about-me--skill-bar {
   width: 80%;
   padding: 30px 30px 50px;
@@ -8,26 +11,35 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-} 
+}
 
-#about-me--img{   
-    padding: 0px 0px 0px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);     
+#about-me--img {
+  padding: 0px 0px 0px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  height: 400px;
+  width: 300px;
 }
-.about-me--img{
-    text-align: center;
+.about-me--img {
+  text-align: center;
+  
 }
-.about-me--header{
-    text-align: center;
+.about-me--info{
+padding: 10px;
 }
-.about-me--skill-bar-header {
-  margin-bottom: 50px;
+.about-me--header {
+  text-align: center;
+  padding: 10px;
+}
+.about-me--skill-bar--header {
+  margin-bottom: 20px;
+  margin-top: 20px;
   letter-spacing: 2px;
   text-align: center;
-  font-size: 33px;
+  font-size: 25px;
   font-weight: bold;
+ 
 }
 .about-me--skill-bar--bar {
   position: relative;
@@ -97,15 +109,33 @@
   }
 }
 
+.footer-bgimg{
+  padding-top: 50px;
+  clear: both;
+  position: relative;
+  height: 100px;
+  
+}
+
 /*For screens bigger than 768px*/
 @media screen and (min-width: 768px) {
+  .about-me{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-span-2{
+    grid-column: span 2;
+  }
   .about-me--skill-bar {
-    width: 20%;
+    width: 100%;
     min-width: 200px;
-    
+    float: right;
+    margin-right: 5%;
   }
-  .about-me--img{
+  .about-me--img {
     text-align: start;
+    margin-left: 5%;
+    display: inline;
+    float: left;
   }
-
 }
+
