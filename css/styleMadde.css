@@ -1,0 +1,111 @@
+.skillbarContainer {
+  font-family: "Poppins", sans-serif;
+  width: 15%;
+  min-width: 210px;
+  padding: 10px 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.skillbarWrapper {
+  margin: 5px;
+}
+
+#img {
+  /* filter: drop-shadow(0px 10px 3px black); */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 60%;
+}
+
+h2 {
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar div {
+  position: relative;
+  width: 0;
+  height: 9px;
+  border-radius: 10px;
+  background-color: #333;
+}
+
+.skills:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#html-bar {
+  animation: html-fill 2s forwards;
+}
+#css-bar {
+  animation: css-fill 2s forwards;
+}
+#csharp-bar {
+  animation: csharp-fill 2s forwards;
+}
+#swedish-bar {
+  animation: swedish-fill 2s forwards;
+}
+#english-bar {
+  animation: english-fill 2s forwards;
+}
+
+@keyframes html-fill {
+  100% {
+    width: 3%;
+  }
+}
+@keyframes css-fill {
+  100% {
+    width: 4%;
+  }
+}
+@keyframes csharp-fill {
+  100% {
+    width: 8%;
+  }
+}
+@keyframes swedish-fill {
+  100% {
+    width: 100%;
+  }
+}
+@keyframes english-fill {
+  100% {
+    width: 90%;
+  }
+}
+
+/*For screens bigger than 768px*/
+@media screen and (min-width: 768px) {
+  #img {
+    margin-left: 0;
+    margin-right: 0;
+    margin: 5px;
+  }
+  .skillbarContainer {
+    position: right;
+  }
+  .about-me {
+    display: flex;
+  }
+  .info-text {
+    display: initial;
+  }
+}
