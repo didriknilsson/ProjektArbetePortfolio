@@ -1,3 +1,86 @@
+.about-header{
+  display: flex;
+  
+  font-family: 'Ubuntu',sans-serif;
+  background-color: rgb(255, 255, 255, 0.2);
+  height: 90vh;
+}
+.about-header .text{
+  padding-top: 20%;
+  color: rgb(29, 29, 29);
+  padding-left: 10%;
+}
+.about-header .text .intro{
+  font-size: 25px;
+  font-weight: 500;
+  
+}
+.about-header .text .stack{
+  
+  font-size: 50px;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 4rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
+
+.about-me{
+  display: grid;
+  gap: 1.5rem;
+}
+
+.about-me-text{
+  padding: 10px;
+  }
+
 .skillbarContainer {
   font-family: "Poppins", sans-serif;
   width: 15%;
@@ -57,14 +140,17 @@ h2 {
   margin-bottom: 10px;
 }
 
+#csharp-bar {
+  animation: csharp-fill 2s forwards;
+}
 #html-bar {
   animation: html-fill 2s forwards;
 }
 #css-bar {
   animation: css-fill 2s forwards;
 }
-#csharp-bar {
-  animation: csharp-fill 2s forwards;
+#bootstrap-bar {
+  animation: bootstrap-fill 2s forwards;
 }
 #swedish-bar {
   animation: swedish-fill 2s forwards;
@@ -73,19 +159,24 @@ h2 {
   animation: english-fill 2s forwards;
 }
 
+@keyframes csharp-fill {
+  100% {
+    width: 60%;
+  }
+}
 @keyframes html-fill {
   100% {
-    width: 3%;
+    width: 40%;
   }
 }
 @keyframes css-fill {
   100% {
-    width: 4%;
+    width: 45%;
   }
 }
-@keyframes csharp-fill {
+@keyframes bootstrap-fill {
   100% {
-    width: 8%;
+    width: 20%;
   }
 }
 @keyframes swedish-fill {
@@ -110,9 +201,13 @@ h2 {
     position: right;
   }
   .about-me {
-    display: flex;
+    grid-template-columns: repeat(4, 1fr);
   }
-  .about-me-text {
+  .grid-col-span-2{
+    grid-column: span 2;
+  }
+  /* .about-me-text {
     display: initial;
-  }
+  } */
 }
+
