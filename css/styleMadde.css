@@ -1,14 +1,35 @@
-.navbar li a:hover {
-  color: rgb(51, 51, 248);
+.clouds-bg-animation {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background: url(/images/cloud.png);
+  background-size: cover;
+  animation: animate 60s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -5440px;
+  }
+}
+
+.dropdown-item a:hover {
+  color: var(--gray);
 }
 .navbar li a:hover {
-  color: rgb(51, 51, 248);
+  color: var(--iceblue);
 }
 .navbar li a:focus {
-  color: rgb(51, 51, 248);
+  color: var(--iceblue);
 }
 .navbar-brand:hover {
-  color: rgb(51, 51, 248);
+  color: var(--iceblue);
 }
 .navbar {
   background-color: rgba(255, 255, 255, 0.3);
@@ -17,7 +38,6 @@
 .navbar-toggler-icon {
   background-color: #fff;
 }
-
 .navbar.sticky {
   background-color: rgb(255, 255, 255);
 }
@@ -25,9 +45,8 @@
 /********************************************************************/
 .about-header {
   display: flex;
-
   font-family: "Ubuntu", sans-serif;
-  background-color: rgb(255, 255, 255, 0.2);
+  /* background-color: rgb(255, 255, 255, 0.2); */
   height: 60vh;
 }
 
@@ -171,7 +190,7 @@ h2 {
   width: 0;
   height: 9px;
   border-radius: 10px;
-  background-color: rgb(51, 51, 248);
+  background-color: var(--iceblue);
 }
 
 .about-me--skill-bar--skills:not(:last-child) {

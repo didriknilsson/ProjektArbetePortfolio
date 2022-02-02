@@ -1,186 +1,161 @@
-.header-bgimg {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60vh; 
-    background: url(/images/DSC_8990.jpg);
-    background-size: cover;
-}
-
-.cloud {
-position: relative;
-top: 0;
-left: 0;
-width: 100%;
-height: 90vh;
-background: url(/images/cloud.png);
-background-size: cover;
-
-animation: animate 60s linear infinite;
+.clouds-bg-animation {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background: url(/images/cloud.png);
+  background-size: cover;
+  animation: animate 60s linear infinite;
 }
 
 @keyframes animate {
-    0%
-    {
-        background-position: 0px;
-    }
-    100%
-    {
-        background-position: -5440px;
-    }
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -5440px;
+  }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
-
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-
-:root{
- --red:rgb(220,20,60);
- --black:rgb(0,0,0);
- --grey:rgb(51,51,51,0.3);
---p: font-family: 'Merriweather' black;
+.navbar li a:hover {
+  color: var(--iceblue);
+}
+.navbar li a:focus {
+  color: var(--iceblue);
+}
+.navbar-brand:hover {
+  color: var(--iceblue);
+}
+.navbar {
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+.navbar.sticky {
+  background-color: rgb(255, 255, 255);
 }
 
-/* .header-bgimg{
-    background: url(/images/DSC_8990.jpg);
-    background-size: cover;
-    position: relative;
-    height: 60vh; 
-} */
-
-.navbar{
-    background-color: var(--grey);
-    font-size: large;
-    font-family: 'Poppins',sans-serif;    
+.footer-bgimg {
+  background: url(/images/DSC_8990.jpg);
+  background-size: cover;
+  position: relative;
+  height: 10vh;
 }
-
-.navbar-brand{
-    color: var(--black);
-    font-weight: 600;
-}
-.navbar-brand:hover{
-    color: white;
-}
-.navbar li a{
-    color: var(--black);
-    
-}
-.navbar li a:hover{
-    color: white;
-}
-.navbar li a:focus{
-    color: white;
-}
-.footer-bgimg{
-    background: url(/images/DSC_8990.jpg);
-    background-size: cover;
-    position: relative;
-    height: 10vh;
-}
-footer p{
-    font-family: var(--p);
+footer p {
+  font-family: var(--p);
 }
 
 .contact-form--wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-    padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 40px;
 }
 
 .contact-form {
-    background: #fff;
-    width: 500px;
-    max-width: 800px;
-    padding: 25px 40px 10px 40px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 3%;
+  background: #fff;
+  width: 500px;
+  max-width: 800px;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 3%;
 }
 
 .contact-form .text {
-    font-size: 35px;
-    font-weight: 600;
-    text-align: center;
-    background: -webkit-linear-gradient(right, white, black);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  background: -webkit-linear-gradient(right, black, var(--iceblue),black,var(--iceblue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .contact-form form .form-row {
-    display: flex;
-    margin: 32px 0;
+  display: flex;
+  margin: 32px 0;
 }
 
 form .form-row .input-data {
-    width: 100%;
-    height: 40px; 
-    margin: 0 20px;
-    position: relative;
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
 }
 
 form .form-row .textarea {
-    height: 70px;
+  height: 70px;
 }
 
-.input-data input, .textarea textarea {
-    display: block;
-    height: 100%;
-    width: 100%;
-    border: none;
-    font-size: 17px;
-    outline: none;
-    border-bottom: 2px solid rgba(0,0,0,0.10);
+.input-data input,
+.textarea textarea {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  outline: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .checkbox {
-    display: block;
-    height: 100%;
-    width: 100%;
-    font-size: 17px;
-    margin: 0 20px;
-    position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 17px;
+  margin: 0 20px;
+  position: relative;
+}
+
+input[type='checkbox']:checked{
+  width: 13px !important;
+  height: 13px !important;
+  /* margin-right: 5px; */
+  appearance:none;
+  background-color: lightblue;
+  font-size: 2em;
 }
 
 .input-data label {
-    position: absolute;
-    bottom: 10px;
-    font-size: 16px;
-    pointer-events: none;
-    transition: all 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 .textarea textarea {
-    resize: none;
+  resize: none;
 }
 
 .input-data input:focus ~ label,
 .textarea textarea:focus ~ label,
 .input-data input:valid ~ label,
 .textarea textarea:valid ~ label {
-    transform: translateY(-20px);
-    color: rgb(51, 51, 248);
-    font-size: 14px;
-    font-weight: 600;
+  transform: translateY(-20px);
+  color: var(--iceblue);
+  font-weight: 600;
 }
 
 .textarea label {
-    width: 100%;
-    top: 10px;
-    bottom: 70px;
-    background: #fff;
+  width: 100%;
+  top: 10px;
+  bottom: 70px;
+  background: #fff;
 }
 
 #submit-btn :hover {
-    background-color: rgb(76, 187, 76);
-    transition: all 1s;
+  /* background-color: rgb(76, 187, 76); */
+  background-color: var(--iceblue);
+  transition: 0.5s;
 }
 
 /*For screens bigger than 768px*/
-@media screen and (min-width: 768px)
-{
-    .header-bgimg{
-        height: 90vh;
-    }
+@media screen and (min-width: 768px) {
+  .header-bgimg {
+    height: 90vh;
+  }
 }
