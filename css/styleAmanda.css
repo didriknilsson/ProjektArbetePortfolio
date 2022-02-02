@@ -3,7 +3,7 @@
   
   font-family: 'Ubuntu',sans-serif;
   background-color: rgb(255, 255, 255, 0.2);
-  height: 90vh;
+  height: 60vh;
 }
 .about-header .text{
   padding-top: 20%;
@@ -16,7 +16,6 @@
   
 }
 .about-header .text .stack{
-  
   font-size: 50px;
 }
 
@@ -204,6 +203,9 @@ padding: 10px;
     width: 100%;
     min-width: 200px;    
    
+  }
+  .about-header{
+    height: 90vh;
   }
   .about-me--img {
   
