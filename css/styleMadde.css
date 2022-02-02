@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90vh;
+  height: 60vh;
   background: url(/images/cloud.png);
   background-size: cover;
   animation: animate 60s linear infinite;
@@ -19,9 +19,6 @@
   }
 }
 
-.dropdown-item a:hover {
-  color: var(--gray);
-}
 .navbar li a:hover {
   color: var(--iceblue);
 }
@@ -96,7 +93,7 @@
   0% {
     opacity: 0;
     transform: translateX(-50%);
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    text-shadow: -2px 3px 0 var(--iceblue), 2px -3px 0 blue;
   }
   60% {
     opacity: 0.5;
@@ -105,7 +102,7 @@
   80% {
     transform: none;
     opacity: 1;
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    text-shadow: 2px -3px 0 var(--iceblue), -2px 3px 0 blue;
   }
   100% {
     text-shadow: none;
@@ -114,11 +111,11 @@
 
 @keyframes glitch {
   0% {
-    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    text-shadow: -2px 3px 0 var(--iceblue), 2px -3px 0 blue;
     transform: translate(var(--glitch-translate));
   }
   2% {
-    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    text-shadow: 2px -3px 0 var(--iceblue), -2px 3px 0 blue;
   }
   4%,
   100% {
@@ -247,6 +244,13 @@ h2 {
   }
 }
 
+body p {
+  color: var(--gray);
+  text-align: center;
+  padding-top: 30px;
+  font-weight: 600;
+}
+
 /*For screens bigger than 768px*/
 @media screen and (min-width: 768px) {
   #about-me--img {
@@ -269,6 +273,9 @@ h2 {
     margin-right: 3%;
   }
   .about-header {
+    height: 90vh;
+  }
+  .clouds-bg-animation {
     height: 90vh;
   }
 }
