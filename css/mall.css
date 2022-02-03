@@ -6,7 +6,7 @@
     font-family: 'Poppins',sans-serif;
 }
 :root{
-    --link-color:rgb(0,0,0);
+--link-color:rgb(0,0,0);
  --link-hover-color:rgb(220,20,60);
  --black:rgb(0,0,0);
  --navbar-color:rgb(255, 255, 255, 0.3);
@@ -18,6 +18,35 @@
  --header-bgimg-color:rgba(255, 255, 255, 0.2);
 
 }
+/*Home page*/
+.developer--img{
+    height: 400px;
+    width: 300px;  
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.developer{
+    min-width: 400px;
+    padding: 30px 30px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    margin: 10px 0px 20px 0px;
+    justify-content: space-evenly;
+    justify-self: center;
+    text-align: center;
+    transition: 
+    transform 750ms cubic-bezier(.5,0,.5,1),
+    opacity 250ms linear;
+    
+}
+.developer h5{
+    padding-top: 15px;
+}
+
 /*Header section*/
 .header-bgimg{
     background: url(/images/DSC_8990.jpg);
@@ -41,40 +70,43 @@
     color: var(--link-color);
     font-weight: 600;
 }
-.navbar-brand:hover{
-    color: var(--link-hover-color);
+
+
+
+.link:hover{
+    color: var(--link-hover-color) !important;
 }
-.navbar li a{
-    color: var(--link-color);
-    
+.link{
+    text-decoration: none !important;
+    color: var(--link-color) !important;    
 }
-.navbar li a:hover{
-    color: var(--link-hover-color);
+
+.link:focus{
+    color: var(--link-hover-color) !important;
 }
-.navbar li a:focus{
-    color: var(--link-hover-color);
-}
-.about-header{
+
+
+/*Header text section*/
+.header{
     display: flex;    
     font-family: 'Ubuntu',sans-serif;
     background-color: var(--header-bgimg-color);
     height: 60vh;
 }
-.about-header .text{
+.header .text{
     padding-top: 20%;
     color: rgb(29, 29, 29);
     padding-left: 10%;
 }
-.about-header .text .intro{
+.header .text .intro{
     font-size: 25px;
     font-weight: 500;
     
 }
-.about-header .text .stack{
+.header .text .stack{
     font-size: 50px;
 }
 
-/*Header text section*/
 .stack {
     display: grid;
     grid-template-columns: 1fr;
@@ -126,13 +158,14 @@
     }
     4%, 100% {  text-shadow: none; transform: none; }
 }
+
 /*About me section*/
-.about-me--header{
+.h2{
     padding: 20px;
     text-align: center;
     margin-bottom: 0px;
 }
-.about-me--container{
+.container{
     padding: 10px 20px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -271,10 +304,12 @@
     .header-bgimg{
         height: 90vh;
     }
-    .about-me--container {
+    .container {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content:space-evenly;
+        padding: 10px 20px 50px 20px;
+
     }
     .about-me--socialshare{
     grid-template-columns: repeat(2, 1fr);
@@ -289,14 +324,16 @@
     margin: 0;
      float: right;
     }
-    .about-me--img{
-        align-items: flex-start;
-        margin: 0;
+    .developer:hover{
+        transform: scale(1.2);
+    opacity: .75;
+    color: var(--link-hover-color);
     }
     .about-me--info{
-        min-width: 60%;
+       
         margin: 0;
         margin-top: 20px;
+        max-width: 70%;
     }
     
    
@@ -304,17 +341,15 @@
         width: 25%;
         min-width: 400px;           
     }
-    .about-header{
+    .header{
         height: 90vh;
         
     }  
-    .about-me--info{
-        max-width: 700px;
-    } 
+  
     .footer-bgimg{
         height: 150px;
     }
-    .about-me--header{
+    .h2{
         margin-bottom: 10px;
     }
     
