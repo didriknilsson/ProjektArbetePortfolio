@@ -6,18 +6,67 @@
     font-family: 'Poppins',sans-serif;
 }
 :root{
-    --link-color:rgb(0,0,0);
- --link-hover-color:rgb(220,20,60);
+--link-color:rgb(0,0,0);
+ --link-hover-color:rgb(189, 222, 236);
  --black:rgb(0,0,0);
+ --iceblue: rgb(189, 222, 236);
  --navbar-color:rgb(255, 255, 255, 0.3);
  --navbar-sticky-color: rgb(255, 255, 255);
  --p: font-family: 'Merriweather' black;
- --skill-bar-color:#0d96e0;
+ --skill-bar-color:rgb(189, 222, 236);
  --text-shadow-color-1: rgb(255,0,0);
  --text-shadow-color-2: rgb(0, 0, 255);
  --header-bgimg-color:rgba(255, 255, 255, 0.2);
-
 }
+
+/*Cloud animation background*/
+.clouds-bg-animation {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background: url(/images/cloud.png);
+    background-size: cover;
+    animation: animate 60s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: 0px;
+    }
+    100% {
+      background-position: -5440px;
+    }
+  }
+
+/*Home page*/
+.developer--img{
+    height: 400px;
+    width: 300px;  
+    border-radius: 10px;
+    overflow: hidden;    
+}
+.developer{
+    min-width: 400px;
+    padding: 30px 30px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    margin: 10px 0px 20px 0px;
+    justify-content: space-evenly;
+    justify-self: center;
+    text-align: center;
+    transition: 
+    transform 750ms cubic-bezier(.5,0,.5,1),
+    opacity 250ms linear;
+}
+.developer h5{
+    padding-top: 15px;
+}
+
 /*Header section*/
 .header-bgimg{
     background: url(/images/DSC_8990.jpg);
@@ -25,61 +74,53 @@
     position: relative;
     height: 60vh; 
 }
-
 .navbar{
     background-color: var(--navbar-color);
     font-size: large;
-    font-family: 'Poppins',sans-serif;   
+    font-family: 'Poppins',sans-serif;
     transition: all 0.3s ease;
-  
+    /*Ändra storlek på navbar*/
 }
 .navbar.sticky{
     background-color:var(--navbar-sticky-color);
 }
-
 .navbar-brand{
     color: var(--link-color);
     font-weight: 600;
 }
-.navbar-brand:hover{
-    color: var(--link-hover-color);
+.link:hover{
+    color: var(--link-hover-color) !important;
 }
-.navbar li a{
-    color: var(--link-color);
-    
+.link{
+    text-decoration: none !important;
+    color: var(--link-color) !important;    
 }
-.navbar li a:hover{
-    color: var(--link-hover-color);
-}
-.navbar li a:focus{
-    color: var(--link-hover-color);
-}
-.about-header{
-    display: flex;    
-    font-family: 'Ubuntu',sans-serif;
-    background-color: var(--header-bgimg-color);
-    height: 60vh;
-}
-.about-header .text{
-    padding-top: 20%;
-    color: rgb(29, 29, 29);
-    padding-left: 10%;
-}
-.about-header .text .intro{
-    font-size: 25px;
-    font-weight: 500;
-    
-}
-.about-header .text .stack{
-    font-size: 50px;
+.link:focus{
+    color: var(--link-hover-color) !important;
 }
 
 /*Header text section*/
+.header{
+    display: flex;    
+    font-family: 'Ubuntu',sans-serif;
+    height: 60vh;
+}
+.header .text{
+    padding-top: 40%;
+    color: rgb(29, 29, 29);
+    padding-left: 10%;
+}
+.header .text .intro{
+    font-size: 25px;
+    font-weight: 500;   
+}
+.header .text .stack{
+    font-size: 50px;
+}
 .stack {
     display: grid;
     grid-template-columns: 1fr;
 }
-
 .stack span {
     font-weight: bold;
     grid-row-start: 1;
@@ -126,19 +167,19 @@
     }
     4%, 100% {  text-shadow: none; transform: none; }
 }
+
 /*About me section*/
-.about-me--header{
+.h2{
     padding: 20px;
     text-align: center;
     margin-bottom: 0px;
 }
-.about-me--container{
+.container{
     padding: 10px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .about-me--skill-bar {
     min-width: 400px;
     padding: 30px 30px 50px;
@@ -148,7 +189,6 @@
     margin-bottom: 10px;
     margin: 10px 0px 20px 0px;
 }
-
 #about-me--img {
     background-color: white;
     border-radius: 10px;
@@ -161,7 +201,6 @@
     text-align: justify;
     margin:20px;
 }
-
 .about-me--skill-bar--header {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -175,7 +214,6 @@
     border: 2px solid var(--skill-bar-color);
     border-radius: 20px;
 }
-
 .about-me--skill-bar--bar div {
     position: relative;
     width: 0;
@@ -241,9 +279,8 @@
 .about-me--socialshare{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-  margin: 20px;
-
+    gap: 3rem;
+    margin: 20px;
 }
 .icon{
     font-size: 2em;
@@ -252,10 +289,10 @@
 .icon:hover{
     color: var(--link-hover-color);
 }
+
 .footer-bgimg{
     background: url(/images/DSC_8990.jpg);
     padding-top: 50px;
- 
     position: relative;
     background-size: cover;
     height: 15vh;
@@ -265,57 +302,57 @@
     padding-right: 5%;
 }
 
-
 /*For screens bigger than 768px*/
 @media screen and (min-width: 768px) {
     .header-bgimg{
         height: 90vh;
     }
-    .about-me--container {
+    .container {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content:space-evenly;
+        padding: 10px 20px 50px 20px;
     }
     .about-me--socialshare{
-    grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .icon{
-    font-size: 5em;
+        font-size: 5em;
     }    
     #about-me--img{
-      min-width: 30%;
-     justify-content: center;
-     align-items: flex-start;
-    margin: 0;
-     float: right;
-    }
-    .about-me--img{
-        align-items: flex-start;
+        min-width: 30%;
+        justify-content: center;
+         align-items: flex-start;
         margin: 0;
+        float: right;
+    }
+    .developer:hover{
+        transform: scale(1.2);
+        opacity: .75;
+        color: var(--link-hover-color);
     }
     .about-me--info{
-        min-width: 60%;
         margin: 0;
         margin-top: 20px;
-    }
-    
-   
+        max-width: 70%;
+    } 
     .about-me--skill-bar {
         width: 25%;
         min-width: 400px;           
     }
-    .about-header{
-        height: 90vh;
-        
+    .header{
+        height: 90vh;      
     }  
-    .about-me--info{
-        max-width: 700px;
-    } 
+    .header .text {
+        padding-top: 20%;
+    }
     .footer-bgimg{
         height: 150px;
     }
-    .about-me--header{
+    .h2{
         margin-bottom: 10px;
     }
-    
+    .clouds-bg-animation {
+        height: 90vh;
+      } 
 }
