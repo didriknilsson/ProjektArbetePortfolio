@@ -1,3 +1,4 @@
+/*Cloud animation background*/
 .clouds-bg-animation {
   display: flex;
   position: absolute;
@@ -7,7 +8,7 @@
   height: 60vh;
   background: url(/images/cloud.png);
   background-size: cover;
-  animation: animate 60s linear infinite;
+  animation: animate 100s linear infinite;
 }
 
 @keyframes animate {
@@ -19,6 +20,7 @@
   }
 }
 
+/*Navigation bar*/
 .navbar li a:hover {
   color: var(--iceblue);
 }
@@ -36,35 +38,29 @@
   background-color: rgb(255, 255, 255);
 }
 
-/*************************************************/
+/*Hi, welcome to*/
 .about-header {
   display: flex;
   font-family: "Ubuntu", sans-serif;
-  /* background-color: rgb(255, 255, 255, 0.2); */
   height: 60vh;
 }
-
 .about-header .text {
-  padding-top: 20%;
+  padding-top: 40%;
   color: rgb(29, 29, 29);
-  padding-left: 40%;
+  padding-left: 10%;
 }
-
 .about-header .text .intro {
   font-size: 25px;
   font-weight: 500;
   color: var(--iceblue);
 }
-
 .about-header .text .stack {
   font-size: 50px;
 }
-
 .stack {
   display: grid;
   grid-template-columns: 1fr;
 }
-
 .stack span {
   font-weight: bold;
   grid-row-start: 1;
@@ -79,7 +75,6 @@
       calc(var(--index) * 120ms),
     glitch 2s ease infinite 2s alternate-reverse;
 }
-
 .stack span:nth-child(odd) {
   --glitch-translate: 8px;
 }
@@ -121,17 +116,8 @@
     transform: none;
   }
 }
-/*************************************************/
-.footer-bgimg {
-  background: url(/images/DSC_8990.jpg);
-  background-size: cover;
-  position: relative;
-  height: 10vh;
-}
-footer p {
-  font-family: var(--p);
-}
 
+/*Contact form*/
 .contact-form--wrapper {
   display: flex;
   align-items: center;
@@ -139,7 +125,6 @@ footer p {
   min-height: 50vh;
   padding: 40px;
 }
-
 .contact-form {
   background: #fff;
   width: 500px;
@@ -148,7 +133,6 @@ footer p {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 3%;
 }
-
 .contact-form .text {
   font-size: 35px;
   font-weight: 600;
@@ -157,23 +141,19 @@ footer p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .contact-form form .form-row {
   display: flex;
   margin: 32px 0;
 }
-
 form .form-row .input-data {
   width: 100%;
   height: 40px;
   margin: 0 20px;
   position: relative;
 }
-
 form .form-row .textarea {
   height: 70px;
 }
-
 .input-data input,
 .textarea textarea {
   display: block;
@@ -184,7 +164,6 @@ form .form-row .textarea {
   outline: none;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
-
 .checkbox {
   display: block;
   height: 100%;
@@ -193,7 +172,6 @@ form .form-row .textarea {
   margin: 0 20px;
   position: relative;
 }
-
 input[type='checkbox']{
   width: 13px !important;
   height: 13px !important;
@@ -201,7 +179,6 @@ input[type='checkbox']{
   border: 2px solid lightblue;
   font-size: 2em;
 }
-
 input[type='checkbox']:checked{
   width: 13px !important;
   height: 13px !important;
@@ -209,7 +186,6 @@ input[type='checkbox']:checked{
   background-color: lightblue;
   font-size: 2em;
 }
-
 .input-data label {
   position: absolute;
   bottom: 10px;
@@ -217,11 +193,9 @@ input[type='checkbox']:checked{
   pointer-events: none;
   transition: all 0.3s ease;
 }
-
 .textarea textarea {
   resize: none;
 }
-
 .input-data input:focus ~ label,
 .textarea textarea:focus ~ label,
 .input-data input:valid ~ label,
@@ -230,20 +204,27 @@ input[type='checkbox']:checked{
   color: var(--iceblue);
   font-weight: 600;
 }
-
 .textarea label {
   width: 100%;
   top: 10px;
   bottom: 70px;
   background: #fff;
 }
-
 #submit-btn :hover {
-  /* background-color: rgb(76, 187, 76); */
   background-color: var(--iceblue);
   transition: 0.5s;
 }
 
+/*Footer*/
+.footer-bgimg {
+  background: url(/images/DSC_8990.jpg);
+  background-size: cover;
+  position: relative;
+  height: 10vh;
+}
+footer p {
+  font-family: var(--p);
+}
 body p {
   color: var(--gray);
   text-align: center;
@@ -255,6 +236,9 @@ body p {
 @media screen and (min-width: 768px) {
   .header-bgimg {
     height: 90vh;
+  }
+  .about-header .text {
+    padding-top: 20%;
   }
   .clouds-bg-animation {
     height: 90vh;

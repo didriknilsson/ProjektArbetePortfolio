@@ -1,3 +1,4 @@
+/*Cloud animation background*/
 .clouds-bg-animation {
   display: flex;
   position: absolute;
@@ -9,7 +10,6 @@
   background-size: cover;
   animation: animate 60s linear infinite;
 }
-
 @keyframes animate {
   0% {
     background-position: 0px;
@@ -19,6 +19,7 @@
   }
 }
 
+/*Navigation bar*/
 .navbar li a:hover {
   color: var(--iceblue);
 }
@@ -36,34 +37,30 @@
   background-color: rgb(255, 255, 255);
 }
 
-/********************************************************************/
+/*Hi, its me logo*/
 .about-header {
   display: flex;
   font-family: "Ubuntu", sans-serif;
   /* background-color: rgb(255, 255, 255, 0.2); */
   height: 60vh;
 }
-
 .about-header .text {
   padding-top: 20%;
   color: rgb(29, 29, 29);
   padding-left: 10%;
 }
-
 .about-header .text .intro {
   font-size: 25px;
   font-weight: 500;
+  color: var(--iceblue);
 }
-
 .about-header .text .stack {
   font-size: 50px;
 }
-
 .stack {
   display: grid;
   grid-template-columns: 1fr;
 }
-
 .stack span {
   font-weight: bold;
   grid-row-start: 1;
@@ -78,7 +75,6 @@
       calc(var(--index) * 120ms),
     glitch 2s ease infinite 2s alternate-reverse;
 }
-
 .stack span:nth-child(odd) {
   --glitch-translate: 8px;
 }
@@ -105,7 +101,6 @@
     text-shadow: none;
   }
 }
-
 @keyframes glitch {
   0% {
     text-shadow: -2px 3px 0 var(--iceblue), 2px -3px 0 blue;
@@ -241,6 +236,7 @@ h2 {
   }
 }
 
+/*Footer*/
 body p {
   color: var(--gray);
   text-align: center;
