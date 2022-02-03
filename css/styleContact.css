@@ -36,7 +36,7 @@
   background-color: rgb(255, 255, 255);
 }
 
-/********************************************************************/
+/*************************************************/
 .about-header {
   display: flex;
   font-family: "Ubuntu", sans-serif;
@@ -47,12 +47,13 @@
 .about-header .text {
   padding-top: 20%;
   color: rgb(29, 29, 29);
-  padding-left: 10%;
+  padding-left: 40%;
 }
 
 .about-header .text .intro {
   font-size: 25px;
   font-weight: 500;
+  color: var(--iceblue);
 }
 
 .about-header .text .stack {
@@ -120,125 +121,127 @@
     transform: none;
   }
 }
-/********************************************************************/
-
-.about-me {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.about-me--header {
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-.about-me--text {
-  padding: 10px;
-}
-
-.about-me--skillbar-container {
-  font-family: "Poppins", sans-serif;
-  width: 60%;
-  min-width: 210px;
-  padding: 10px 10px 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  display: grid;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-
-#about-me--img {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 2%;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-}
-
-.about-me--skillbar-wrapper {
-  margin: 5px;
-}
-
-h2 {
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-  text-align: center;
-  font-size: 33px;
-  font-weight: bold;
-}
-
-.about-me--skill-bar--header {
-  font-size: 25px;
-}
-
-.about-me--skill-bar--details {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.about-me--skill-bar--bar div {
+/*************************************************/
+.footer-bgimg {
+  background: url(/images/DSC_8990.jpg);
+  background-size: cover;
   position: relative;
-  width: 0;
-  height: 9px;
-  border-radius: 10px;
+  height: 10vh;
+}
+footer p {
+  font-family: var(--p);
+}
+
+.contact-form--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 40px;
+}
+
+.contact-form {
+  background: #fff;
+  width: 500px;
+  max-width: 800px;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 3%;
+}
+
+.contact-form .text {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  background: -webkit-linear-gradient(right, black, var(--iceblue),black,var(--iceblue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-form form .form-row {
+  display: flex;
+  margin: 32px 0;
+}
+
+form .form-row .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+
+form .form-row .textarea {
+  height: 70px;
+}
+
+.input-data input,
+.textarea textarea {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  outline: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.checkbox {
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 17px;
+  margin: 0 20px;
+  position: relative;
+}
+
+input[type='checkbox']{
+  width: 13px !important;
+  height: 13px !important;
+  appearance:none;
+  border: 2px solid lightblue;
+  font-size: 2em;
+}
+
+input[type='checkbox']:checked{
+  width: 13px !important;
+  height: 13px !important;
+  appearance:none;
+  background-color: lightblue;
+  font-size: 2em;
+}
+
+.input-data label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.textarea textarea {
+  resize: none;
+}
+
+.input-data input:focus ~ label,
+.textarea textarea:focus ~ label,
+.input-data input:valid ~ label,
+.textarea textarea:valid ~ label {
+  transform: translateY(-20px);
+  color: var(--iceblue);
+  font-weight: 600;
+}
+
+.textarea label {
+  width: 100%;
+  top: 10px;
+  bottom: 70px;
+  background: #fff;
+}
+
+#submit-btn :hover {
+  /* background-color: rgb(76, 187, 76); */
   background-color: var(--iceblue);
-}
-
-.about-me--skill-bar--skills:not(:last-child) {
-  margin-bottom: 5%;
-}
-
-#csharp-bar {
-  animation: csharp-fill 2s forwards;
-}
-#html-bar {
-  animation: html-fill 2s forwards;
-}
-#css-bar {
-  animation: css-fill 2s forwards;
-}
-#bootstrap-bar {
-  animation: bootstrap-fill 2s forwards;
-}
-#swedish-bar {
-  animation: swedish-fill 2s forwards;
-}
-#english-bar {
-  animation: english-fill 2s forwards;
-}
-
-@keyframes csharp-fill {
-  100% {
-    width: 60%;
-  }
-}
-@keyframes html-fill {
-  100% {
-    width: 40%;
-  }
-}
-@keyframes css-fill {
-  100% {
-    width: 45%;
-  }
-}
-@keyframes bootstrap-fill {
-  100% {
-    width: 20%;
-  }
-}
-@keyframes swedish-fill {
-  100% {
-    width: 100%;
-  }
-}
-@keyframes english-fill {
-  100% {
-    width: 90%;
-  }
+  transition: 0.5s;
 }
 
 body p {
@@ -250,26 +253,7 @@ body p {
 
 /*For screens bigger than 768px*/
 @media screen and (min-width: 768px) {
-  #about-me--img {
-    margin-left: 10%;
-  }
-  .about-me--skillbar-container {
-    position: right;
-    width: 80%;
-    margin-right: 10%;
-  }
-  .about-me--skillbar-wrapper {
-    grid-column-start: 4;
-    grid-row-start: 2;
-  }
-  .about-me {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .grid-col-span-2 {
-    grid-column: span 3;
-    margin-right: 3%;
-  }
-  .about-header {
+  .header-bgimg {
     height: 90vh;
   }
   .clouds-bg-animation {
