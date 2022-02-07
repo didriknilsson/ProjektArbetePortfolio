@@ -75,7 +75,7 @@
     height: 60vh; 
 }
 .navbar{
-    background-color: var(--navbar-color);
+    background-color: white;
     font-size: large;
     font-family: 'Poppins',sans-serif;
     transition: all 0.3s ease;
@@ -319,6 +319,9 @@
     .icon{
         font-size: 5em;
     }    
+    .navbar{
+    background-color: var(--navbar-color);
+    }
     #about-me--img{
         min-width: 30%;
         justify-content: center;
