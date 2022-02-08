@@ -224,6 +224,141 @@
       width: 90%;
     }
   }
+  /* portfolio css*/
+  .portfolio-slideshow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider{
+    position: relative;
+    background: rgb(189, 222, 236);
+    width: 800px;
+    min-height: 500px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .slider .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0% at 0 50%);
+  }
+  
+  .slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+  }
+  
+  .slider .slide img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider .slide .info{
+    position: absolute;
+    color: #222;
+    background: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+  }
+  
+  .slider .slide .info h2{
+    font-size: 2em;
+    font-weight: 800;
+  }
+  
+  .slider .slide .info p{
+    font-size: 1em;
+    font-weight: 400;
+  }
+  
+  .navigation{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slider:hover .navigation{
+    opacity: 1;
+  }
+  
+  .prev-btn, .next-btn{
+    z-index: 999;
+    font-size: 2em;
+    color: #222;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev-btn{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  
+  .next-btn{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  
+  .navigation-visibility{
+    z-index: 999;
+    display: flex;
+    justify-content:center;
+    
+  }
+  
+  .navigation-visibility .slide-icon{
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 10px;
+    transform: translateY(-50px);
+    margin: 0 6px;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+  
+  .navigation-visibility .slide-icon.active{
+    background: rgb(189, 222, 236);
+  }
+  .portfolio-info{
+    flex-direction: row;
+      flex-wrap: wrap;
+      justify-content:space-evenly;
+      padding: 10px 20px 50px 20px;
+  }
+
+  .portfolio-text{
+    min-width: 400px;
+    padding: 30px 30px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    margin: 10px 10px 20px 10px;
+    justify-content: space-evenly;
+    justify-self: center;
+    text-align: center;
+  }
+  .portfolio-text-img{
+    height: 200px;
+    width: 300px;  
+    border-radius: 10px;
+    overflow: hidden; 
+  }
   
   /*For screens bigger than 768px*/
   @media screen and (min-width: 768px) {
@@ -269,8 +404,24 @@
     .clouds-bg-animation{
       height: 90vh;
     }
-    
+    /* media portfolio*/
+    .slider{
+      width: 70%;
+      height: 60vh;
+    }
   
+    .slider .slide .info{
+      position: relative;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .portfolio-info{
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 5px;
+    }
+    
   }
   
   
