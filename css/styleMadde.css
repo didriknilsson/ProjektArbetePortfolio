@@ -1,193 +1,5 @@
-/*Cloud animation background*/
-.clouds-bg-animation {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60vh;
-  background: url(/images/cloud.png);
-  background-size: cover;
-  animation: animate 60s linear infinite;
-}
-@keyframes animate {
-  0% {
-    background-position: 0px;
-  }
-  100% {
-    background-position: -5440px;
-  }
-}
-
-/*Navigation bar*/
-.navbar li a:hover {
-  color: var(--iceblue);
-}
-.navbar li a:focus {
-  color: var(--iceblue);
-}
-.navbar-brand:hover {
-  color: var(--iceblue);
-}
-.navbar {
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-.navbar.sticky {
-  background-color: rgb(255, 255, 255);
-}
-
-/*Hi, its me logo*/
-.about-header {
-  display: flex;
-  font-family: "Ubuntu", sans-serif;
-  /* background-color: rgb(255, 255, 255, 0.2); */
-  height: 60vh;
-}
-.about-header .text {
-  padding-top: 20%;
-  color: rgb(29, 29, 29);
-  padding-left: 10%;
-}
-.about-header .text .intro {
-  font-size: 25px;
-  font-weight: 500;
-  color: var(--iceblue);
-}
-.about-header .text .stack {
-  font-size: 50px;
-}
-.stack {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-.stack span {
-  font-weight: bold;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  font-size: 4rem;
-  --stack-height: calc(100% / var(--stacks) - 1px);
-  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
-  --clip-top: calc(var(--stack-height) * var(--index));
-  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
-  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
-  animation: stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards
-      calc(var(--index) * 120ms),
-    glitch 2s ease infinite 2s alternate-reverse;
-}
-.stack span:nth-child(odd) {
-  --glitch-translate: 8px;
-}
-.stack span:nth-child(even) {
-  --glitch-translate: -8px;
-}
-
-@keyframes stack {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%);
-    text-shadow: -2px 3px 0 var(--iceblue), 2px -3px 0 blue;
-  }
-  60% {
-    opacity: 0.5;
-    transform: translateX(50%);
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-    text-shadow: 2px -3px 0 var(--iceblue), -2px 3px 0 blue;
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-@keyframes glitch {
-  0% {
-    text-shadow: -2px 3px 0 var(--iceblue), 2px -3px 0 blue;
-    transform: translate(var(--glitch-translate));
-  }
-  2% {
-    text-shadow: 2px -3px 0 var(--iceblue), -2px 3px 0 blue;
-  }
-  4%,
-  100% {
-    text-shadow: none;
-    transform: none;
-  }
-}
-/********************************************************************/
-
-.about-me {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.about-me--header {
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-.about-me--text {
-  padding: 10px;
-}
-
-.about-me--skillbar-container {
-  font-family: "Poppins", sans-serif;
-  width: 60%;
-  min-width: 210px;
-  padding: 10px 10px 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  display: grid;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-
-#about-me--img {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 2%;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-}
-
-.about-me--skillbar-wrapper {
-  margin: 5px;
-}
-
-h2 {
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-  text-align: center;
-  font-size: 33px;
-  font-weight: bold;
-}
-
-.about-me--skill-bar--header {
-  font-size: 25px;
-}
-
-.about-me--skill-bar--details {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.about-me--skill-bar--bar div {
-  position: relative;
-  width: 0;
-  height: 9px;
-  border-radius: 10px;
-  background-color: var(--iceblue);
-}
-
-.about-me--skill-bar--skills:not(:last-child) {
-  margin-bottom: 5%;
-}
-
 #csharp-bar {
-  animation: csharp-fill 2s forwards;
+  animation: cs-fill 2s forwards;
 }
 #html-bar {
   animation: html-fill 2s forwards;
@@ -204,8 +16,7 @@ h2 {
 #english-bar {
   animation: english-fill 2s forwards;
 }
-
-@keyframes csharp-fill {
+@keyframes cs-fill {
   100% {
     width: 60%;
   }
@@ -217,7 +28,7 @@ h2 {
 }
 @keyframes css-fill {
   100% {
-    width: 45%;
+    width: 50%;
   }
 }
 @keyframes bootstrap-fill {
@@ -233,42 +44,5 @@ h2 {
 @keyframes english-fill {
   100% {
     width: 90%;
-  }
-}
-
-/*Footer*/
-body p {
-  color: var(--gray);
-  text-align: center;
-  padding-top: 30px;
-  font-weight: 600;
-}
-
-/*For screens bigger than 768px*/
-@media screen and (min-width: 768px) {
-  #about-me--img {
-    margin-left: 10%;
-  }
-  .about-me--skillbar-container {
-    position: right;
-    width: 80%;
-    margin-right: 10%;
-  }
-  .about-me--skillbar-wrapper {
-    grid-column-start: 4;
-    grid-row-start: 2;
-  }
-  .about-me {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .grid-col-span-2 {
-    grid-column: span 3;
-    margin-right: 3%;
-  }
-  .about-header {
-    height: 90vh;
-  }
-  .clouds-bg-animation {
-    height: 90vh;
   }
 }
