@@ -1,158 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-
-
-:root {
-    --background: #060608;
-    --color: #FAFAFA;
-  }
-
-.navbar{
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-}
-.navbar.sticky{
-    background-color: rgb(255, 255, 255);
-}
-.about-header{
-    display: flex;
-    
-    font-family: 'Ubuntu',sans-serif;
-    background-color: rgb(255, 255, 255, 0.2);
-    height: 90vh;
-}
-.about-header .text{
-    padding-top: 20%;
-    color: rgb(29, 29, 29);
-    padding-left: 10%;
-}
-.about-header .text .intro{
-    font-size: 25px;
-    font-weight: 500;
-    
-}
-.about-header .text .stack{
-    
-    font-size: 50px;
-}
-
-
-.stack {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-  
-.stack span {
-    font-weight: bold;
-    grid-row-start: 1;
-    grid-column-start: 1;
-    font-size: 4rem;
-    --stack-height: calc(100% / var(--stacks) - 1px);
-    --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
-    --clip-top: calc(var(--stack-height) * var(--index));
-    --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
-    clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
-    animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
-}
-  
-.stack span:nth-child(odd) { --glitch-translate: 8px; }
-.stack span:nth-child(even) { --glitch-translate: -8px; }
-  
-@keyframes stack {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%);
-      text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-    };
-    60% {
-      opacity: 0.5;
-      transform: translateX(50%);
-    }
-    80% {
-      transform: none;
-      opacity: 1;
-      text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-    }
-    100% {
-      text-shadow: none;
-    }
-  }
-  
-@keyframes glitch {
-    0% {
-      text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-      transform: translate(var(--glitch-translate));
-    }
-    2% {
-      text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
-    }
-    4%, 100% {  text-shadow: none; transform: none; }
-}
-
-.about-content{
-    margin: 5%;
-}
-.about-me--img{
-    margin-bottom: 10px;
-}
-.right .text .intro{
-    font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.about-me--skill-bar {
-    width: 80%;
-    padding: 30px 30px 50px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  } 
-  
-  #about-me--img{   
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
-  }
-  .about-me--img{
-      text-align: center;
-  }
-  .about-me--header{
-      text-align: center;
-  }
-  .about-me--skill-bar-header {
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 33px;
-    font-weight: bold;
-  }
-  .about-me--skill-bar--bar {
-    position: relative;
-    border: 2px solid #0d96e0;
-    border-radius: 20px;
-  }
-  
-  .about-me--skill-bar--bar div {
-    position: relative;
-    width: 0;
-    height: 9px;
-    border-radius: 10px;
-    background-color: #0d96e0;
-  }
-  .about-me--skill-bar--details {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  #cs-bar {
+  #csharp-bar {
     animation: cs-fill 2s forwards;
   }
   #html-bar {
@@ -172,22 +19,22 @@
   }
   @keyframes cs-fill {
     100% {
-      width: 70%;
+      width: 80%;
     }
   }
   @keyframes html-fill {
     100% {
-      width: 50%;
+      width: 70%;
     }
   }
   @keyframes css-fill {
     100% {
-      width: 55%;
+      width: 70%;
     }
   }
   @keyframes bootstrap-fill {
     100% {
-      width: 35%;
+      width: 30%;
     }
   }
   @keyframes swedish-fill {
@@ -200,41 +47,3 @@
       width: 90%;
     }
   }
-  
-  /*For screens bigger than 768px*/
-  @media screen and (min-width: 768px) {
-    .about-me--skill-bar {
-      width: 20%;
-      min-width: 200px;
-      
-    }
-    .about-me--img{
-      text-align: start;
-    }
-    .about-content{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-        
-    }
-    .about-me--header{
-        margin-top: 20px;
-    }
-    
-    
-    .about-me .about-content .left{
-        width: 40%;
-    }
-    .about-me .about-content .left .about-me--img{
-        object-fit: cover;
-    }
-    .about-me .about-content .right{
-        width: 60%;
-    }
-    .about-me .about-content .right p{
-        text-align: justify;
-    }
-  
-  }
-  

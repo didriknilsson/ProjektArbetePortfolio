@@ -1,74 +1,183 @@
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if (this.scrollY > 20) {
-      $(".navbar").addClass("sticky");
-      $(".menu-btn").addClass("sticky");
-    } else {
-      $(".navbar").removeClass("sticky");
-      $(".menu-btn").removeClass("sticky");
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () 
-{
-  fields.firstName = document.getElementById("firstName");
-  fields.lastName = document.getElementById("lastName");
-  fields.phoneNumber = document.getElementById("phoneNumber");
-  fields.email = document.getElementById("email");
-  fields.newsletter = document.getElementById("newsletter");
-  fields.question = document.getElementById("question");
-});
-
-function isNotEmpty(value) 
-{
-  if (value == null || typeof value == "undefined") return false;
-  return value.length > 0;
-}
-
-function isEmail(email) 
-{
-  let regex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-  return regex.test(String(email).toLowerCase());
-}
-
-function fieldValidation(field, validationFunction) 
-{
-  if (field == null) return false;
-
-  let isFieldValid = validationFunction(field.value);
-  if (!isFieldValid) {
-    field.className = "placeholderRed";
+$(window).scroll(function () {
+  if (this.scrollY > 20) {
+    $("#navbar").addClass("sticky");
   } else {
-    field.className = "";
+    $("#navbar").removeClass("sticky");
+  }
+});
+
+const navbarToggle = navbar.querySelector('#navbar-toggle');
+let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+
+const toggleNavbarVisibility = () => {
+isNavbarExpanded = !isNavbarExpanded;
+navbarToggle.setAttribute('aria-expanded', isNavbarExpanded);
+};
+
+navbarToggle.addEventListener('click', toggleNavbarVisibility);
+const navbarMenu = document.querySelector('#navbar-menu');
+const navbarLinksContainer = navbarMenu.querySelector('.navbar-links');
+
+navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation());
+navbarMenu.addEventListener('click', toggleNavbarVisibility);
+
+//Navbar dropdown
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+/*Script Contact form*/
+$("#email").keyup(function () {
+  var email = $("#email").val();
+  var filter =
+    /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  if (!filter.test(email)) {
+    //alert('Please provide a valid email address');
+    $("#error-email").text(email + " is not a valid e-mail");
+    email.focus;
+    //return false;
+  } else {
+    $("#error-email").text("");
+  }
+});
+$("#submit-btn").click(function(){
+
+  var email = $("#email").val();
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  if (!filter.test(email)) {
+     alert('The e-mail address you provide is not valid');
+     $("#email").focus();
+     return false;
+  } else {
+  }
+});
+
+$("#phonenumber").keyup(function () {
+  var phonenumber = $("#phonenumber").val();
+  var filter =
+  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+  if (!filter.test(phonenumber)) {
+    //alert('Please provide a valid phonenumber address');
+    $("#error-phonenumber").text(phonenumber + " is not a valid phonenumber");
+    phonenumber.focus;
+    //return false;
+  } else {
+    $("#error-phonenumber").text("");
+  }
+});
+$("#submit-btn").click(function(){
+
+  var phonenumber = $("#phonenumber").val();
+  var filter = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+  if (!filter.test(phonenumber)) {
+     alert('The phonenumber address you provide is not valid');
+     $("#phonenumber").focus();
+     return false;
+  } else {
   }
 
-  return isFieldValid;
-}
+});
 
-function isValid() 
-{
-  var valid = true;
 
-  valid &= fieldValidation(fields.firstName, isNotEmpty);
-  valid &= fieldValidation(fields.lastName, isNotEmpty);
-  valid &= fieldValidation(fields.phoneNumber, isNotEmpty);
-  valid &= fieldValidation(fields.email, isEmail);
-  valid &= fieldValidation(fields.question, isNotEmpty);
-  valid &= arePasswordsEqual();
+/* script portfolio*/
+const slider = document.querySelector(".slider");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const slides = document.querySelectorAll(".slide");
+const slideIcons = document.querySelectorAll(".slide-icon");
+const numberOfSlides = slides.length;
+var slideNumber = 0;
 
-  return valid;
-}
+//image slider next button
+nextBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
 
-class User {
-  constructor(firstName, lastName, phoneNumber, email, newsletter, question) 
-  {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
-    this.newsletter = newsletter;
-    this.question = question;
+  slideNumber++;
+
+  if (slideNumber > numberOfSlides - 1) {
+    slideNumber = 0;
   }
-}
+
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
+});
+
+//image slider previous button
+prevBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
+
+  slideNumber--;
+
+  if (slideNumber < 0) {
+    slideNumber = numberOfSlides - 1;
+  }
+
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
+});
+
+//image slider autoplay
+var playSlider;
+
+var repeater = () => {
+  playSlider = setInterval(function () {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove("active");
+    });
+
+    slideNumber++;
+
+    if (slideNumber > numberOfSlides - 1) {
+      slideNumber = 0;
+    }
+
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+  }, 5000);
+};
+repeater();
+
+//stop the image slider autoplay on mouseover
+slider.addEventListener("mouseover", () => {
+  clearInterval(playSlider);
+});
+
+//start the image slider autoplay again on mouseout
+slider.addEventListener("mouseout", () => {
+  repeater();
+});
+
