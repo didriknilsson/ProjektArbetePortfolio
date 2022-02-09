@@ -1,3 +1,11 @@
+$(window).scroll(function () {
+    if (this.scrollY > 20) {
+      $("#navbar").addClass("sticky");
+    } else {
+      $("#navbar").removeClass("sticky");
+    }
+  });
+
 const navbarToggle = navbar.querySelector('#navbar-toggle');
 let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
 
@@ -33,3 +41,5 @@ function myFunction() {
       }
     }
   }
+
+ 
