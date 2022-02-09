@@ -142,14 +142,15 @@
   -webkit-text-fill-color: transparent;
 }
 .contact-form form .form-row {
-  /* display: flex; */
-  /* margin: 32px 0; */
+  display: flex;
+  margin: 32px 0;
 }
 form .form-row .input-data {
   width: 100%;
-  height: 60px;
+  height: 40px;
   margin: 0 20px;
   position: relative;
+  color: rgb(173, 169, 169);
 }
 form .form-row .textarea {
   height: 70px;
@@ -242,102 +243,5 @@ body p {
   }
   .clouds-bg-animation {
     height: 90vh;
-  }
-  /*Contact form*/
-  .contact-form--wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-    padding: 40px;
-  }
-  .contact-form {
-    background: #fff;
-    width: 500px;
-    max-width: 800px;
-    padding: 25px 40px 10px 40px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 3%;
-  }
-  .contact-form .text {
-    font-size: 35px;
-    font-weight: 600;
-    text-align: center;
-    background: -webkit-linear-gradient(right, black, var(--iceblue),black,var(--iceblue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .contact-form form .form-row {
-    display: flex;
-    margin: 32px 0;
-  }
-  form .form-row .input-data {
-    width: 100%;
-    height: 40px;
-    margin: 0 20px;
-    position: relative;
-  }
-  form .form-row .textarea {
-    height: 70px;
-  }
-  .input-data input,
-  .textarea textarea {
-    display: block;
-    height: 100%;
-    width: 100%;
-    border: none;
-    font-size: 17px;
-    outline: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  }
-  .checkbox {
-    display: block;
-    height: 100%;
-    width: 100%;
-    font-size: 17px;
-    margin: 0 20px;
-    position: relative;
-  }
-  input[type='checkbox']{
-    width: 13px !important;
-    height: 13px !important;
-    appearance:none;
-    border: 2px solid lightblue;
-    font-size: 2em;
-  }
-  input[type='checkbox']:checked{
-    width: 13px !important;
-    height: 13px !important;
-    appearance:none;
-    background-color: lightblue;
-    font-size: 2em;
-  }
-  .input-data label {
-    position: absolute;
-    bottom: 10px;
-    font-size: 16px;
-    pointer-events: none;
-    transition: all 0.3s ease;
-  }
-  .textarea textarea {
-    resize: none;
-  }
-  .input-data input:focus ~ label,
-  .textarea textarea:focus ~ label,
-  .input-data input:valid ~ label,
-  .textarea textarea:valid ~ label {
-    transform: translateY(-20px);
-    color: var(--iceblue);
-    font-weight: 600;
-  }
-  .textarea label {
-    width: 100%;
-    top: 10px;
-    bottom: 70px;
-    background: #fff;
-  }
-  #submit-btn :hover {
-    background-color: var(--iceblue);
-    transition: 0.5s;
   }
 }
