@@ -69,6 +69,11 @@
     </section>
   </header>
 
+  <!-- <input type="text" name="email" id="email" />
+  <label id="error_email" style="color: red;"></label>
+  <br />
+  <input type="submit" name="submit" id="submit-email" /> -->
+
   <div class="contact-form--wrapper">
     <div class="contact-form">
       <div class="text">Contact us</div>
@@ -85,14 +90,16 @@
         </div>
         <div class="form-row">
           <div class="input-data">
-            <input type="text" required>
+            <input type="text" name="phonenumber" id="phonenumber"required>
             <label>Phone number</label>
           </div>
           <div class="input-data">
-            <input type="text" required>
+            <input type="text" name="email" id="email" required>
             <label>E-mail</label>
           </div>
         </div>
+        <label id="error-phonenumber"></label><br>
+        <label id="error-email"></label>
         <div class="form-row">
           <div class="checkbox">
             <input type="checkbox">

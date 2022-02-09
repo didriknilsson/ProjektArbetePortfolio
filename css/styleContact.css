@@ -166,7 +166,7 @@ form .form-row .textarea {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 .checkbox {
-  display: block;
+  display: inline-block;
   height: 100%;
   width: 100%;
   font-size: 17px;
@@ -200,7 +200,7 @@ input[type='checkbox']:checked{
 .input-data input:focus ~ label,
 .textarea textarea:focus ~ label,
 .input-data input:valid ~ label,
-.textarea textarea:valid ~ label {
+.textarea textarea:focus ~ label {
   transform: translateY(-20px);
   color: var(--iceblue);
   font-weight: 600;
@@ -214,6 +214,10 @@ input[type='checkbox']:checked{
 #submit-btn :hover {
   background-color: var(--iceblue);
   transition: 0.5s;
+}
+#error-email, #error-phonenumber {
+  padding-left: 20px;
+  color: red;
 }
 
 /*Footer*/
