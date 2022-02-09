@@ -51,7 +51,9 @@ $("#submit-btn").click(function(){
      return false;
   } else {
   }
+
 });
+
 
 /* script portfolio*/
 const slider = document.querySelector(".slider");
