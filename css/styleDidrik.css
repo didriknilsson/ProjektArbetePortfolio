@@ -442,5 +442,92 @@
     }
     
   }
+  *{
+    font-family: 'Poppins',sans-serif;
+}
+:root{
+--link-color:rgb(0,0,0);
+ --link-hover-color:rgb(189, 222, 236);
+ --black:rgb(0,0,0);
+ --iceblue: rgb(189, 222, 236);
+ --navbar-color:rgb(255, 255, 255, 0.3);
+ --navbar-sticky-color: rgb(255, 255, 255);
+ --p: font-family: 'Merriweather' black;
+ --skill-bar-color:rgb(189, 222, 236);
+ --text-shadow-color-1: rgb(255,0,0);
+ --text-shadow-color-2: rgb(0, 0, 255);
+ --header-bgimg-color:rgba(255, 255, 255, 0.2);
+}
+
+  .glitch {
+    font-size: 4.5rem;
+    font-weight: 700;
+    position: relative;
+    text-shadow: 0.025em 0 0 var(--iceblue),
+      -0.0125em -0.025em 0 white,
+      0.0125em 0.025em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch-layer 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards, glitch 2s infinite 2s alternate-reverse;
+  }
+  
+  .glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .glitch span:first-child {
+     animation: glitch 1s infinite; 
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0125em);
+    
+    opacity: 0.8;
+  }
+  
+  .glitch span:last-child {
+     animation: glitch 1.5s infinite; 
+    clip-path: polygon(0 60%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+    
+    opacity: 0.8;
+  }
+  
+  
+  
+  @keyframes glitch {
+    0% {
+      text-shadow: 0.025em 0 0 var(--iceblue),
+        -0.025em -0.0125em 0 white,
+        -0.0125em 0.025em 0 rgba(0, 0, 255, 0.75);
+    }
+    2% {
+      text-shadow: -0.025em 0 0 var(--iceblue),
+        0.055em 0.025em 0 white,
+        0.0125em -0.025em 0 rgba(0, 0, 255, 0.75);
+    }
+    4%, 
+    100% {
+      text-shadow: none;
+      transform: none;
+    }
+  }
+  @keyframes glitch-layer {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+      text-shadow: 0.05em 0.075em 0 var(--iceblue), -0.025 -0.05 0 blue;
+    }
+    60% {
+      opacity: 0.5;
+      transform: translateX(50%);
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+      text-shadow: 0.025em 0.075em 0 var(--iceblue), -0.025 -0.05 0 blue;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
   
   
