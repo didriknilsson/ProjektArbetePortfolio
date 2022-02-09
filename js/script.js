@@ -20,7 +20,6 @@ function ValidateEmail(input) {
     return false;
 
   }
-
 }
 
 /* script portfolio*/

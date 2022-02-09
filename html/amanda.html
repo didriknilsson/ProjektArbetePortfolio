@@ -5,11 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!--Hamburger menu (icons)-->
+  <link rel="stylesheet" href="/css/stylecopy.css" />  
+  <!--Icons-->
   <script src="https://kit.fontawesome.com/19b12a14ab.js" crossorigin="anonymous"></script>
   <!--javascript library-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -17,64 +14,59 @@
 </head>
 
 <body>
-  <header>
-    <section class="header-bgimg">
-      <div class="cloud-bg-animation"></div>
-      <nav class="navbar navbar-expand-lg fixed-top navbarScroll navbar-light">
-        <div class="container">
-          <a href="/html/amanda.html" class="navbar-brand link">Amanda</a>
-          <!--Hamburger menu-->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!--Menu layout-->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a href="/html/index.html" class="nav-link link">Home</a>
-              </li>
-              <!--Dropdown menu for developers-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle link" href="#" role="button" data-bs-toggle="dropdown">Developers</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item link" href="/html/didrik.html">Didrik</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item link" href="/html/madde.html">Madde</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item active link" href="/html/amanda.html">Amanda</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="/html/portfolio.html" class="nav-link link">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a href="/html/contact.html" class="nav-link link">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="header">
+  <header class="header-bgimg">  
+    <div class="cloud-bg-animation"></div>
+    <div id="navbar">
+          <nav class="navbar-container">
+            <a href="" class="home-link">           
+              Amanda
+            </a>
+            <!--Hamburger menu-->
+            <button
+              type="button"
+              id="navbar-toggle"
+              aria-controls="navbar-menu"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div id="navbar-menu" aria-labelledby="navbar-toggle">
+              <ul class="navbar-links">
+                <li class="navbar-item active"><a class="navbar-link" href="/html/index.html">Home</a></li>
+              
+                <li class="navbar-item dropdown">  
+                 <a onclick="myFunction()" class="navbar-item dropdown dropbtn navbar-link" href="#">Developers<i class="fas fa-caret-down"></i></a>
+                  <ul id="myDropdown" class="dropdown-content navbar-link">
+                      <li><a href="/html/didrik.html">Didrik</a></li>
+                      <li><a href="/html/madde.html">Madeleine</a></li>
+                      <li> <a href="/html/amanda.html">Amanda</a></li>
+                  </ul>
+                    
+                </li>
+                <li class="navbar-item"><a class="navbar-link" href="/html/portfolio.html">Portfolio</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/html/contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>        
+      <div class="header-text">
         <div class="text"><span class="intro">Hi, my name is Amanda and I am a</span>
-          <element class="stack" style="--stacks: 3;">
+          <div class="stack" style="--stacks: 3;">
             <span style="--index: 0;">Developer</span>
             <span style="--index: 1;">Developer</span>
             <span style="--index: 2;">Developer</span>
-          </element>
+          </div>
         </div>
       </div>
-    </section>
+    
   </header>
   <!--About me-->
   <main>
-    <h2 class="main-h2">About me</h2>
     <section class="main-container">
+      <h2 class="main-h2">About me</h2>
       <!--About me photo-->
       <div class="about-me--img">
         <img id="about-me--img" src="/images/Amanda.jpg" alt="Picture of Amanda" />
@@ -171,75 +163,6 @@
         </div>
       </div>
 
-      <!-- <div class="about-me--skillbar-wrapper">
-        <div class="about-me--skillbar-container">
-            <h2 class="about-me--skill-bar--header">Skills</h2>
-
-            <div class="about-me--skill-bar--skills">
-                <div class="about-me--skill-bar--details">
-                    <span>C#</span>
-                    <span>60%</span>
-                </div>
-                <div class="about-me--skill-bar--bar">
-                    <div id="csharp-bar">
-                    </div>
-                </div>
-            </div>
-            <div class="about-me--skill-bar--skills">
-                <div class="about-me--skill-bar--details">
-                    <span>HTML</span>
-                    <span>40%</span>
-                </div>
-                <div class="about-me--skill-bar--bar">
-                    <div id="html-bar">
-                    </div>
-                </div>
-            </div>
-            <div class="about-me--skill-bar--skills">
-                <div class="about-me--skill-bar--details">
-                    <span>CSS</span>
-                    <span>45%</span>
-                </div>
-                <div class="about-me--skill-bar--bar">
-                    <div id="css-bar">
-                    </div>
-                </div>
-            </div>
-            <div class="about-me--skill-bar--skills">
-                <div class="about-me--skill-bar--details">
-                    <span>Bootstrap</span>
-                    <span>20%</span>
-                </div>
-                <div class="about-me--skill-bar--bar">
-                    <div id="bootstrap-bar">
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="about-me--skill-bar--header">Languages</h2>
-            <div class="about-me--skill-bar--languages">
-                <div class="about-me--skill-bar--details">
-                    <span>Swedish</span>
-                    <span>100%</span>
-                </div>
-                <div class="about-me--skill-bar--bar">
-                    <div id="swedish-bar">
-                    </div>
-                </div>
-            </div>
-            <div class="about-me--skill-bar--languages">
-                <div class="about-me--skill-bar--details">
-                    <span>English</span>
-                    <span>90%</span>
-                </div>
-                <div class="about-me--skill-bar--bar">
-                    <div id="english-bar">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
       <div class="about-me--socialshare ">
         <a href="https://github.com/" class="link">
           <i class="fab fa-github icon"></i></a>
@@ -255,12 +178,13 @@
     </section>
   </main>
 
+
   <!--Footer-->
   <footer class="footer-bgimg">
     <p>Copyright &#169; MaddeDidrikAmanda &#8482;</p>
   </footer>
   
-  <script src="/js/script.js"></script>
+  <script src="/js/text.js"></script>
 </body>
 
 </html>

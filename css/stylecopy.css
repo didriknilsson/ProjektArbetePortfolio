@@ -18,7 +18,7 @@
     
 }
   
-  /* * {
+   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -191,7 +191,7 @@
  --navbar-sticky-color: rgb(255, 255, 255);
 
  --skill-bar-color:rgb(189, 222, 236);
- --text-shadow-color-1: rgb(255,0,0);
+ --text-shadow-color-1: rgb(189, 222, 236);
  --text-shadow-color-2: rgb(0, 0, 255);
  --header-bgimg-color:rgba(255, 255, 255, 0.2);
 }
@@ -259,22 +259,23 @@
 
 
 /*Header text section*/
-.header{
+.header-text{
     display: flex;    
     font-family: 'Ubuntu',sans-serif;
     height: 70vh;
+  
 }
-.header .text{
-    padding-top: 25%;
+.header-text .text{
+    padding-top: 40%;
     color: rgb(29, 29, 29);
     padding-left: 10%;
 }
-.header .text .intro{
+.header-text .text .intro{
     font-size: 25px;
     font-weight: 500;   
     color: var(--iceblue);
 }
-.header .text .stack{
+.header-text .text .stack{
     font-size: 50px;
 }
 .stack {
@@ -342,18 +343,21 @@
 }
 #about-me--img {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 200px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    max-height: 400px;
-    max-width: 300px;
+    height: 400px;
+    width: 400px;
    margin: 20px;
+   object-fit: cover;
 }
-.about-me--info{
+.about-me--info, .home--about-us--info{
     text-align: justify;
     margin:20px;
 }
 
-.about-me--skill-bar {
+/*About me skillbar*/
+
+ .about-me--skill-bar {
     min-width: 400px;
     padding: 30px 30px 30px;
     background-color: white;
@@ -438,7 +442,9 @@
     100% {
         width: 90%;
     }
-}
+} 
+
+/*Socialshare*/
 
 .about-me--socialshare{
     display: grid;
@@ -454,6 +460,144 @@
 .icon:hover{
     color: var(--link-hover-color);
 }
+/* portfolio css*/
+.portfolio-slideshow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider{
+    position: relative;
+    background: rgb(189, 222, 236);
+    width: 800px;
+    min-height: 500px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .slider .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0% at 0 50%);
+  }
+  
+  .slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+  }
+  
+  .slider .slide img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider .slide .info{
+    position: absolute;
+    color: #222;
+    background: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+  }
+  
+  .slider .slide .info h2{
+    font-size: 2em;
+    font-weight: 800;
+  }
+  
+  .slider .slide .info p{
+    font-size: 1em;
+    font-weight: 400;
+  }
+  
+  .navigation{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slider:hover .navigation{
+    opacity: 1;
+  }
+  
+  .prev-btn, .next-btn{
+    z-index: 999;
+    font-size: 2em;
+    color: #222;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .prev-btn{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  
+  .next-btn{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  
+  .navigation-visibility{
+    z-index: 999;
+    display: flex;
+    justify-content:center;
+    
+  }
+  
+  .navigation-visibility .slide-icon{
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 10px;
+    transform: translateY(-50px);
+    margin: 0 6px;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+  
+  .navigation-visibility .slide-icon.active{
+    background: rgb(189, 222, 236);
+  }
+  .portfolio-info{
+    flex-direction: row;
+      flex-wrap: wrap;
+      justify-content:space-evenly;
+      padding: 10px 20px 50px 20px;
+  }
+
+  .portfolio-text{
+    min-width: 200px;
+    padding: 30px 30px 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    margin: 10px 10px 20px 10px;
+    justify-content: space-evenly;
+    justify-self: center;
+    text-align: center;
+  }
+  .portfolio-text-img{
+    height: 166px;
+    width: 250px;  
+    border-radius: 10px;
+    overflow: hidden; 
+  }
+  .portfolio-text-header{
+    margin-top: 5px;
+  }
 
 .footer-bgimg{
     background: url(/images/MountainBg.jpg);
@@ -522,30 +666,33 @@
         font-size: 5em;
     }    
     #about-me--img{
-        min-width: 30%;
-        justify-content: center;
-         align-items: flex-start;
         margin: 0;
-        float: right;
+    }
+    .about-me--img{
+        min-width: 40%;
+        justify-content: center;
+         align-items: center;
+        margin: 0;
+        text-align: center;
     }
     .developer:hover{
         transform: scale(1.2);
         opacity: .75;
         color: var(--link-hover-color);
     }
-    .about-me--info{
-        margin: 0;
+    .about-me--info, .home--about-us--info{
+        margin: 30px 140px;
         margin-top: 20px;
-        max-width: 70%;
+        max-width: 100%;
     } 
     .about-me--skill-bar {
         width: 25%;
         min-width: 400px;           
     }
-    .header{
+    .header-text{
         height: 90vh;      
     }  
-    .header .text {
+    .header-text .text {
         padding-top: 20%;
     }
     
@@ -558,8 +705,43 @@
     }
     .main-h2{
         margin-bottom: 10px;
+        width: 100%;
     }
     .clouds-bg-animation {
         height: 90vh;
-      } 
+    } 
+     /* media portfolio*/
+     .slider{
+        width: 70%;
+        height: 60vh;
+      }
+    
+      .slider .slide .info{
+        position: relative;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .portfolio-info{
+        display: flex;
+        flex-flow: wrap;
+        
+        justify-content: space-evenly;
+        margin: 5px;
+      }
+      .portfolio-text-img{
+        height: 200px;
+        width: 300px;  
+        border-radius: 10px;
+        overflow: hidden; 
+      }
+      .portfolio-text{
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      .portfolio-text p{
+        margin-left: 50px;
+        margin-right: 50px;
+      }
 }
+
