@@ -1,27 +1,57 @@
 /*Script Contact form*/
-function ValidateEmail(input) {
+$("#email").keyup(function () {
+  var email = $("#email").val();
+  var filter =
+    /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-  if (input.value.match(validRegex)) {
-
-    alert("Valid email address!");
-
-    document.contact-form.e-mail.focus();
-
-    return true;
-
+  if (!filter.test(email)) {
+    //alert('Please provide a valid email address');
+    $("#error-email").text(email + " is not a valid e-mail");
+    email.focus;
+    //return false;
   } else {
-
-    alert("Invalid email address!");
-
-    document.contact-form.e-mail.focus();
-
-    return false;
-
+    $("#error-email").text("");
   }
+});
+$("#submit-btn").click(function(){
 
-}
+  var email = $("#email").val();
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  if (!filter.test(email)) {
+     alert('The e-mail address you provide is not valid');
+     $("#email").focus();
+     return false;
+  } else {
+  }
+});
+
+$("#phonenumber").keyup(function () {
+  var phonenumber = $("#phonenumber").val();
+  var filter =
+  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+  if (!filter.test(phonenumber)) {
+    //alert('Please provide a valid phonenumber address');
+    $("#error-phonenumber").text(phonenumber + " is not a valid phonenumber");
+    phonenumber.focus;
+    //return false;
+  } else {
+    $("#error-phonenumber").text("");
+  }
+});
+$("#submit-btn").click(function(){
+
+  var phonenumber = $("#phonenumber").val();
+  var filter = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+  if (!filter.test(phonenumber)) {
+     alert('The phonenumber address you provide is not valid');
+     $("#phonenumber").focus();
+     return false;
+  } else {
+  }
+});
 
 /* script portfolio*/
 const slider = document.querySelector(".slider");
@@ -43,7 +73,7 @@ nextBtn.addEventListener("click", () => {
 
   slideNumber++;
 
-  if(slideNumber > (numberOfSlides - 1)){
+  if (slideNumber > numberOfSlides - 1) {
     slideNumber = 0;
   }
 
@@ -62,7 +92,7 @@ prevBtn.addEventListener("click", () => {
 
   slideNumber--;
 
-  if(slideNumber < 0){
+  if (slideNumber < 0) {
     slideNumber = numberOfSlides - 1;
   }
 
@@ -74,7 +104,7 @@ prevBtn.addEventListener("click", () => {
 var playSlider;
 
 var repeater = () => {
-  playSlider = setInterval(function(){
+  playSlider = setInterval(function () {
     slides.forEach((slide) => {
       slide.classList.remove("active");
     });
@@ -84,14 +114,14 @@ var repeater = () => {
 
     slideNumber++;
 
-    if(slideNumber > (numberOfSlides - 1)){
+    if (slideNumber > numberOfSlides - 1) {
       slideNumber = 0;
     }
 
     slides[slideNumber].classList.add("active");
     slideIcons[slideNumber].classList.add("active");
   }, 5000);
-}
+};
 repeater();
 
 //stop the image slider autoplay on mouseover
