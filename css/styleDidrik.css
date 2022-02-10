@@ -1,49 +1,48 @@
-
-  #csharp-bar {
-    animation: cs-fill 2s forwards;
+#csharp-bar {
+  animation: cs-fill 2s forwards;
+}
+#html-bar {
+  animation: html-fill 2s forwards;
+}
+#css-bar {
+  animation: css-fill 2s forwards;
+}
+#bootstrap-bar {
+  animation: bootstrap-fill 2s forwards;
+}
+#swedish-bar {
+  animation: swedish-fill 2s forwards;
+}
+#english-bar {
+  animation: english-fill 2s forwards;
+}
+@keyframes cs-fill {
+  100% {
+    width: 80%;
   }
-  #html-bar {
-    animation: html-fill 2s forwards;
+}
+@keyframes html-fill {
+  100% {
+    width: 70%;
   }
-  #css-bar {
-    animation: css-fill 2s forwards;
+}
+@keyframes css-fill {
+  100% {
+    width: 70%;
   }
-  #bootstrap-bar {
-    animation: bootstrap-fill 2s forwards;
+}
+@keyframes bootstrap-fill {
+  100% {
+    width: 30%;
   }
-  #swedish-bar {
-    animation: swedish-fill 2s forwards;
+}
+@keyframes swedish-fill {
+  100% {
+    width: 100%;
   }
-  #english-bar {
-    animation: english-fill 2s forwards;
+}
+@keyframes english-fill {
+  100% {
+    width: 90%;
   }
-  @keyframes cs-fill {
-    100% {
-      width: 80%;
-    }
-  }
-  @keyframes html-fill {
-    100% {
-      width: 70%;
-    }
-  }
-  @keyframes css-fill {
-    100% {
-      width: 70%;
-    }
-  }
-  @keyframes bootstrap-fill {
-    100% {
-      width: 30%;
-    }
-  }
-  @keyframes swedish-fill {
-    100% {
-      width: 100%;
-    }
-  }
-  @keyframes english-fill {
-    100% {
-      width: 90%;
-    }
-  }
+}
