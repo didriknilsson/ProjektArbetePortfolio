@@ -1,3 +1,4 @@
+/*Navbar sticky*/
 $(window).scroll(function () {
   if (this.scrollY > 20) {
     $("#navbar").addClass("sticky");
@@ -6,6 +7,7 @@ $(window).scroll(function () {
   }
 });
 
+/*Navbar*/
 const navbarToggle = navbar.querySelector('#navbar-toggle');
 let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
 
@@ -21,14 +23,14 @@ const navbarLinksContainer = navbarMenu.querySelector('.navbar-links');
 navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation());
 navbarMenu.addEventListener('click', toggleNavbarVisibility);
 
-//Navbar dropdown
-/* When the user clicks on the button, 
+/*Navbar dropdown*/
+/*When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
+/*Close the dropdown if the user clicks outside of it*/
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -42,7 +44,6 @@ window.onclick = function(event) {
   }
 }
 
-
 /*Script Contact form*/
 $("#email").keyup(function () {
   var email = $("#email").val();
@@ -50,10 +51,8 @@ $("#email").keyup(function () {
     /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
   if (!filter.test(email)) {
-    //alert('Please provide a valid email address');
     $("#error-email").text(email + " is not a valid e-mail");
     email.focus;
-    //return false;
   } else {
     $("#error-email").text("");
   }
@@ -77,10 +76,8 @@ $("#phonenumber").keyup(function () {
   /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
   if (!filter.test(phonenumber)) {
-    //alert('Please provide a valid phonenumber address');
     $("#error-phonenumber").text(phonenumber + " is not a valid phonenumber");
     phonenumber.focus;
-    //return false;
   } else {
     $("#error-phonenumber").text("");
   }
@@ -99,8 +96,7 @@ $("#submit-btn").click(function(){
 
 });
 
-
-/* script portfolio*/
+/*Script portfolio*/
 const slider = document.querySelector(".slider");
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
@@ -109,7 +105,7 @@ const slideIcons = document.querySelectorAll(".slide-icon");
 const numberOfSlides = slides.length;
 var slideNumber = 0;
 
-//image slider next button
+/*Image slider next button*/
 nextBtn.addEventListener("click", () => {
   slides.forEach((slide) => {
     slide.classList.remove("active");
@@ -128,7 +124,7 @@ nextBtn.addEventListener("click", () => {
   slideIcons[slideNumber].classList.add("active");
 });
 
-//image slider previous button
+/*Mage slider previous button*/
 prevBtn.addEventListener("click", () => {
   slides.forEach((slide) => {
     slide.classList.remove("active");
@@ -147,7 +143,7 @@ prevBtn.addEventListener("click", () => {
   slideIcons[slideNumber].classList.add("active");
 });
 
-//image slider autoplay
+/*Image slider autoplay*/
 var playSlider;
 
 var repeater = () => {
@@ -171,12 +167,12 @@ var repeater = () => {
 };
 repeater();
 
-//stop the image slider autoplay on mouseover
+/*Stop the image slider autoplay on mouseover*/
 slider.addEventListener("mouseover", () => {
   clearInterval(playSlider);
 });
 
-//start the image slider autoplay again on mouseout
+/*Start the image slider autoplay again on mouseout*/
 slider.addEventListener("mouseout", () => {
   repeater();
 });
