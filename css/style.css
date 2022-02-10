@@ -83,6 +83,8 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  text-align: center;
+
 }
 .navbar-link:is(:focus, :hover) {
   color: var(--navbar-text-color-focus);
@@ -93,9 +95,6 @@
 .show {
   display: block;
   list-style-type: none;
-}
-.dropdown a {
-  text-align: center;
 }
 #navbar-toggle {
   cursor: pointer;
@@ -140,7 +139,7 @@
 }
 #navbar-toggle[aria-expanded="true"] + #navbar-menu {
   opacity: 1;
-  visibility: visible;
+  visibility:visible;
 }
 .navbar-links {
   list-style: none;
@@ -153,7 +152,7 @@
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
 }
 #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
-  padding: 1em;
+  padding: 0em;
   background-color: var(--navbar-bg-color-mobile);
 }
 
