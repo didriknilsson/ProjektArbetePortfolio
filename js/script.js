@@ -57,6 +57,7 @@ $("#email").keyup(function () {
     $("#error-email").text("");
   }
 });
+
 $("#submit-btn").click(function(){
 
   var email = $("#email").val();
@@ -82,6 +83,7 @@ $("#phonenumber").keyup(function () {
     $("#error-phonenumber").text("");
   }
 });
+
 $("#submit-btn").click(function(){
 
   var phonenumber = $("#phonenumber").val();
