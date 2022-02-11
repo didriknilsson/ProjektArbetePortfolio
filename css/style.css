@@ -57,6 +57,10 @@
   font-weight: 400;
   align-items: center;
 }
+.home-link{
+  font-size: 1.1em;
+  font-weight: 700;
+}
 .home-link:is(:focus, :hover) {
   color: var(--navbar-text-color-focus);
 }
@@ -214,7 +218,7 @@
   text-shadow: 0.025em 0 0 var(--glitch-shadow-color-1),
     -0.0125em -0.025em 0 var(--glitch-shadow-color-3),
     0.0125em 0.025em 0 var(--glitch-shadow-color-2);
-  animation: glitch-layer 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards,
+  animation: glitch-layer 340ms backwards,
     glitch 2s infinite 2s alternate-reverse;
 }
 .glitch span {
